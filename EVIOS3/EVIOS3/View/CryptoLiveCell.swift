@@ -7,9 +7,9 @@
 
 import UIKit
 
-class cryptoLiveCell: UITableViewCell {
+class CryptoLiveCell: UITableViewCell {
     
-    static let identifier = "cryptoLiveCell"
+    static let identifier = "CryptoLiveCell"
     
     @IBOutlet var nameLabel: UILabel!
     
@@ -20,6 +20,13 @@ class cryptoLiveCell: UITableViewCell {
     @IBOutlet var evalLabel: UILabel!
     
     @IBOutlet var infoButton: UIButton!
+    
+    func setupCell(cryptoLive: CryptosLive){
+        nameLabel.text = cryptoLive.name
+        rankLabel.text = cryptoLive.rank
+        valueLabel.text = cryptoLive.value
+        evalLabel.text = cryptoLive.valEvol
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

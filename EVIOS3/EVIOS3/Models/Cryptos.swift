@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+
+struct Coins : Codable{
+    var coins: [Cryptos]
+}
+
+struct Cryptos: Codable{
+    let name : String
+    let icon : String?
+}

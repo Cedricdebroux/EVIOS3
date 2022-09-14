@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CryptosCell: UITableViewCell {
     
@@ -14,6 +15,22 @@ class CryptosCell: UITableViewCell {
     
     @IBOutlet var nameCryptoLabel: UILabel!
     
+    func setupCell(cryptosC : Cryptos){
+        nameCryptoLabel.text = cryptosC.name
+        if let imageUrl = cryptosC.icon,
+           let url = URL(string: imageUrl){
+            LogoImage.af.setImage(withURL: url)
+        }else {
+            LogoImage.isHidden = true
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        LogoImage.af.cancelImageRequest()
+        LogoImage.image = nil
+        LogoImage.isHidden = false
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -6,3 +6,22 @@
 //
 
 import Foundation
+struct Datas: Codable{
+    var data : [CryptosLive]
+}
+
+
+struct CryptosLive: Codable{
+    
+    let rank: String
+    let name : String
+    let value : String
+    let valEvol : String
+    
+    enum CodingKeys:String, CodingKey{
+        case rank
+        case name
+        case value = "priceUsd"
+        case valEvol = "changePercent24Hr"
+    }
+}
