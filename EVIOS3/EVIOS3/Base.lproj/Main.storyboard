@@ -1,24 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Wn-sB-iEF">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Crypto Live-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CryptoLive" id="BYZ-38-t0r" customClass="CryptoLive" customModule="EVIOS3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OPr-nS-kqt">
+                                <rect key="frame" x="0.0" y="91" width="390" height="670"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OPr-nS-kqt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8x9-8A-sTM"/>
+                            <constraint firstItem="OPr-nS-kqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K5f-YN-0XU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OPr-nS-kqt" secondAttribute="trailing" id="TDk-Xy-zcL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OPr-nS-kqt" secondAttribute="bottom" id="bq9-1J-ynn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4Wt-qE-TQ0"/>
+                    <connections>
+                        <outlet property="cryptoLiveTableView" destination="OPr-nS-kqt" id="zjP-cB-hRj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1995.3846153846152" y="3.5545023696682461"/>
+        </scene>
+        <!--Cryptos-->
+        <scene sceneID="ikk-JK-TYL">
+            <objects>
+                <viewController storyboardIdentifier="Cryptos" id="hDL-WI-aUR" customClass="Cryptos" customModule="EVIOS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nYp-Ts-hsf">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nul-bw-Pu1">
+                                <rect key="frame" x="0.0" y="91" width="390" height="670"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BuH-dx-p4B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BuH-dx-p4B" firstAttribute="trailing" secondItem="nul-bw-Pu1" secondAttribute="trailing" id="89B-k4-R6z"/>
+                            <constraint firstItem="nul-bw-Pu1" firstAttribute="top" secondItem="BuH-dx-p4B" secondAttribute="top" id="8qh-6A-fWE"/>
+                            <constraint firstItem="nul-bw-Pu1" firstAttribute="leading" secondItem="BuH-dx-p4B" secondAttribute="leading" id="DZT-bu-fxX"/>
+                            <constraint firstItem="BuH-dx-p4B" firstAttribute="bottom" secondItem="nul-bw-Pu1" secondAttribute="bottom" id="OBe-DC-bvq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SyZ-py-FAe"/>
+                    <connections>
+                        <outlet property="CryptosTableView" destination="nul-bw-Pu1" id="HBo-ef-pC5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifZ-JM-IjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1995" y="675"/>
+        </scene>
+        <!--CryptoLive-->
+        <scene sceneID="kJR-kD-4ci">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gDb-lE-Adi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="CryptoLive" id="IWe-00-BdT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dkd-Df-nzR">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tU0-ss-IpR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ra-Vl-n6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.6153846153845" y="3.5545023696682461"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uTA-b0-XhJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8Wn-sB-iEF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="31R-v9-9OI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gDb-lE-Adi" kind="relationship" relationship="viewControllers" id="KzK-Q1-NBc"/>
+                        <segue destination="YtS-M5-B0l" kind="relationship" relationship="viewControllers" id="I94-IO-Vyy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8p-0G-Lx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.38461538461539" y="3.5545023696682461"/>
+        </scene>
+        <!--Cryptos-->
+        <scene sceneID="wdD-Tb-WQ9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YtS-M5-B0l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cryptos" id="8IB-Cd-mSk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OLY-s2-bRw">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hDL-WI-aUR" kind="relationship" relationship="rootViewController" id="Ieg-ID-VaA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlf-1O-6gP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="675"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
