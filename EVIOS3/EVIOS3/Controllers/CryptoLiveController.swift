@@ -15,6 +15,7 @@ class CryptoLiveController: UIViewController {
    
     @IBOutlet var cryptoLiveTableView: UITableView!
     
+    @IBOutlet var loader: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +26,14 @@ class CryptoLiveController: UIViewController {
         cryptoLiveTableView.delegate = self
         cryptoLiveTableView.register(UINib(nibName: CryptoLiveCell.identifier, bundle: .main), forCellReuseIdentifier: CryptoLiveCell.identifier)
         fetchCryptosL()
+        
+         
+         
     }
     
     func fetchCryptosL(){
+        loader.isHidden = false
+        loader.startAnimating()
         let apiURL = URL(string: "https://api.coincap.io/v2/assets")!
         AF.request(apiURL).response{
             [weak self] response in
@@ -38,6 +44,8 @@ class CryptoLiveController: UIViewController {
                     let result = try JSONDecoder().decode(Datas.self, from: data)
                     self?.cryptos = result.data
                     self?.cryptoLiveTableView.reloadData()
+                    self?.loader.isHidden = true
+                    self?.loader.stopAnimating()
                 }
                 catch {
                     print(error)
@@ -57,7 +65,7 @@ extension CryptoLiveController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let customCell = cryptoLiveTableView.dequeueReusableCell(withIdentifier: CryptoLiveCell.identifier, for: indexPath) as? CryptoLiveCell
+        guard let customCell = tableView.dequeueReusableCell(withIdentifier: CryptoLiveCell.identifier, for: indexPath) as? CryptoLiveCell
         else {
             fatalError("unable to dequeue cryptoLiveTableView")
         }
@@ -70,7 +78,7 @@ extension CryptoLiveController: UITableViewDataSource {
 extension CryptoLiveController: UITableViewDelegate{
    
 
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didselectRowAt indexPath: IndexPath) {
         if let detailCryptos = storyboard?.instantiateViewController(withIdentifier: DetailsCryptosViewController.identifier) as? DetailsCryptosViewController{
             detailCryptos.crypto = cryptos[indexPath.row]
             navigationController?.pushViewController(detailCryptos, animated: true)

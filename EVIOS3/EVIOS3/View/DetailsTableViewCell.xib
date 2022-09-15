@@ -17,20 +17,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Lf-DFa">
-                        <rect key="frame" x="412" y="10" width="42" height="96"/>
+                        <rect key="frame" x="304" y="10" width="150" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="JSn-Mx-ss1"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdZ-Xf-5OM">
-                        <rect key="frame" x="10" y="10" width="42" height="96"/>
+                        <rect key="frame" x="10" y="10" width="150" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Z9M-uI-6hi"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tEA-Lf-DFa" firstAttribute="leading" secondItem="vdZ-Xf-5OM" secondAttribute="trailing" constant="360" id="08A-6z-AYf"/>
                     <constraint firstAttribute="bottom" secondItem="tEA-Lf-DFa" secondAttribute="bottom" constant="10" id="TjW-Cg-LYd"/>
                     <constraint firstAttribute="trailing" secondItem="tEA-Lf-DFa" secondAttribute="trailing" constant="10" id="VUf-Xu-KCx"/>
                     <constraint firstItem="tEA-Lf-DFa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="h1i-YE-F1e"/>

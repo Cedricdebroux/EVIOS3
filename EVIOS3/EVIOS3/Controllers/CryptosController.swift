@@ -15,6 +15,7 @@ class CryptosController: UIViewController {
     
     @IBOutlet var CryptosTableView: UITableView!
     
+    @IBOutlet var loader: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Cryptos"
@@ -27,6 +28,8 @@ class CryptosController: UIViewController {
     
 
     func fetchCryptos(){
+        loader.isHidden = false
+        loader.startAnimating()
         let apiURL = URL(string: "https://api.coinstats.app/public/v1/coins?skip=0&limit=50&currency=EUR")!
         AF.request(apiURL).response{
             [weak self] response in
@@ -37,6 +40,8 @@ class CryptosController: UIViewController {
                     let result = try JSONDecoder().decode(Coins.self, from: data)
                     self?.cryptos = result.coins
                     self?.CryptosTableView.reloadData()
+                    self?.loader.isHidden = true
+                    self?.loader.stopAnimating()
                 }
                 catch {
                     print(error)

@@ -20,6 +20,10 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="Ntb-F5-8AE">
+                                <rect key="frame" x="0.0" y="400" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,11 +32,13 @@
                             <constraint firstItem="OPr-nS-kqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K5f-YN-0XU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OPr-nS-kqt" secondAttribute="trailing" id="TDk-Xy-zcL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OPr-nS-kqt" secondAttribute="bottom" id="bq9-1J-ynn"/>
+                            <constraint firstItem="Ntb-F5-8AE" firstAttribute="centerX" secondItem="OPr-nS-kqt" secondAttribute="centerX" id="r2v-eZ-rfr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Wt-qE-TQ0"/>
                     <connections>
                         <outlet property="cryptoLiveTableView" destination="OPr-nS-kqt" id="DDx-tC-k6k"/>
+                        <outlet property="loader" destination="Ntb-F5-8AE" id="ZVU-yB-dXR"/>
                         <segue destination="zIK-AN-0Ty" kind="show" id="Qg1-hl-Rwp"/>
                     </connections>
                 </viewController>
@@ -73,6 +79,10 @@
                                 <rect key="frame" x="0.0" y="151" width="390" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="dhL-2z-5MQ">
+                                <rect key="frame" x="0.0" y="420" width="390" height="3.3333333333333335"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fME-Wh-fq1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,6 +99,7 @@
                     <navigationItem key="navigationItem" id="e5C-bH-wVX"/>
                     <connections>
                         <outlet property="detailTableView" destination="GTF-Hl-YkL" id="6Sk-WV-JnG"/>
+                        <outlet property="loader" destination="dhL-2z-5MQ" id="BY1-Kf-mZv"/>
                         <outlet property="nameLabel" destination="JD6-TY-fbH" id="o9D-WV-KpO"/>
                         <outlet property="valueLabel" destination="JD6-TY-fbH" id="UQw-Rd-ib4"/>
                     </connections>
@@ -109,6 +120,10 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="VZF-tg-6w7">
+                                <rect key="frame" x="0.0" y="400" width="390" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BuH-dx-p4B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,6 +137,7 @@
                     <navigationItem key="navigationItem" id="SyZ-py-FAe"/>
                     <connections>
                         <outlet property="CryptosTableView" destination="nul-bw-Pu1" id="bTe-JN-SYN"/>
+                        <outlet property="loader" destination="VZF-tg-6w7" id="VxJ-lS-OdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifZ-JM-IjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
