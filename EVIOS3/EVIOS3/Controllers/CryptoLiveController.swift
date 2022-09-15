@@ -78,7 +78,7 @@ extension CryptoLiveController: UITableViewDataSource {
 extension CryptoLiveController: UITableViewDelegate{
    
 
-    func tableView(_ tableView: UITableView, didselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailCryptos = storyboard?.instantiateViewController(withIdentifier: DetailsCryptosViewController.identifier) as? DetailsCryptosViewController{
             detailCryptos.crypto = cryptos[indexPath.row]
             navigationController?.pushViewController(detailCryptos, animated: true)
