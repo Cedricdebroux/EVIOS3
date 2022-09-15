@@ -100,7 +100,7 @@
                     <connections>
                         <outlet property="detailTableView" destination="GTF-Hl-YkL" id="6Sk-WV-JnG"/>
                         <outlet property="loader" destination="dhL-2z-5MQ" id="BY1-Kf-mZv"/>
-                        <outlet property="nameLabel" destination="JD6-TY-fbH" id="o9D-WV-KpO"/>
+                        <outlet property="nameLabel" destination="faK-7J-Cpm" id="GNq-2F-Uc2"/>
                         <outlet property="valueLabel" destination="JD6-TY-fbH" id="UQw-Rd-ib4"/>
                     </connections>
                 </viewController>

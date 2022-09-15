@@ -24,17 +24,18 @@ static let identifier = "DetailsCryptosViewController"
     
     @IBOutlet var loader: UIActivityIndicatorView!
     func setup(){
-        nameLabel.text = crypto.name
-        valueLabel.text = crypto
+        nameLabel.text = crypto?.name
+        valueLabel.text = crypto?
             .value
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         detailTableView.dataSource = self
         detailTableView.register(UINib(nibName: DetailsTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: DetailsTableViewCell.identifier)
         
-        setup()
+        
         fetchDetailCrypto()
     }
     

@@ -83,5 +83,8 @@ extension CryptoLiveController: UITableViewDelegate{
             detailCryptos.crypto = cryptos[indexPath.row]
             navigationController?.pushViewController(detailCryptos, animated: true)
         }
+        else{
+            fatalError("unubale live details")
+        }
     }
 }
