@@ -42,7 +42,7 @@ static let identifier = "DetailsCryptosViewController"
     func fetchDetailCrypto(){
         loader.isHidden = false
         loader.startAnimating()
-        let apiUrl = URL(string: "https://api.coincap.io/v2/assets/bitcoin/history?interval=d1")!
+        let apiUrl = URL(string: "https://api.coincap.io/v2/assets/\(crypto.id)/history?interval=d1")!
         AF.request(apiUrl).response{
             [weak self] response in
             switch response.result {
